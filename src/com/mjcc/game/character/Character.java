@@ -10,7 +10,7 @@ public class Character {
     private int basicAtack;
     private int basicDefense;
 
-
+    // Constructor
     public Character(String name, int health, int basicAtack, int basicDefense) {
         this.name = name;
         this.health = health;
@@ -34,6 +34,7 @@ public class Character {
     }
 
 
+    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -42,11 +43,11 @@ public class Character {
         return health;
     }
 
-    private void setHealth(int health) {
+    public void setHealth(int health) {
         this.health = health;
     }
 
-    private int getBasicAtack() {
+    public int getBasicAtack() {
         return basicAtack;
     }
 
@@ -54,7 +55,7 @@ public class Character {
         this.basicAtack = basicAtack;
     }
 
-    private int getBasicDefense() {
+    public int getBasicDefense() {
         return basicDefense;
     }
 

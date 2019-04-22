@@ -1,6 +1,6 @@
 package com.mjcc.game.item;
 
-public enum KindOfItem {
+public enum ItemPurpose {
     WEAPON,
     DEFENSE,
     HEALING,

@@ -6,9 +6,11 @@ import com.mjcc.game.character.enemy.Enemy;
 import com.mjcc.game.item.Item;
 import com.mjcc.game.item.ItemType;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Player p1 = new Player("Mário");
         Enemy e1 = new Enemy(EnemyType.MERCENARY);
