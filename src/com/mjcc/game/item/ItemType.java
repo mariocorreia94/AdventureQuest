@@ -24,7 +24,6 @@ public enum ItemType {
 
 
     //Getters and Setters
-
     public ItemPurpose getItemKind() {
         return itemKind;
     }

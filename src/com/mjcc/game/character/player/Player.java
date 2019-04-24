@@ -2,6 +2,7 @@ package com.mjcc.game.character.player;
 
 import com.mjcc.game.character.Character;
 import com.mjcc.game.item.Item;
+import com.mjcc.game.item.ItemPurpose;
 import com.mjcc.game.item.ItemType;
 
 import java.lang.reflect.Array;
@@ -20,10 +21,15 @@ public class Player extends Character {
 
     public void addToInventory(Item item){
         inventory.put(item, false);
+        System.out.println(item.toString() + " added to your inventory!");
     }
 
     public void listInventory(){
-
+        System.out.println("-------INVENTORY--------");
+        for (int i = 0; i < inventory.size(); i++) {
+            System.out.println(inventory.keySet().toArray()[i].toString());
+        }
+        System.out.println("------------------------");
     }
 
     public Item removeFromInventory(Item item) {
@@ -46,15 +52,24 @@ public class Player extends Character {
 
     public Item equip(Item item){
 
+        if(!inventory.containsKey(item)) {
+            System.out.println("You can not equip an item that is not in your Inventory!");
+            return null;
+        }
+
+        if((item.getType().getItemKind() == ItemPurpose.DEFAULT)) {
+            System.out.println("You can not wear this type of item");
+            return item;
+        }
+
         if(inventory.get(item)){
             System.out.println("You are already using this Item");
             return item;
         }
 
-        //TODO: is item exists in inventory and if it is usable
         if(inventory.containsKey(item)) {
             inventory.put(item, true);
-            System.out.println("Item " + item.toString() + "is equiped.");
+            System.out.println(item.toString() + " is equiped.");
             return item;
         } else {
             System.out.println("You can not wear an Item that is not in your Inventory");

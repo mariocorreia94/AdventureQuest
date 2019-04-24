@@ -21,14 +21,14 @@ public class Main {
 
         p1.addToInventory(item);
         p1.addToInventory(item1);
-        p1.addToInventory(item2);
+        //p1.addToInventory(item2);
+
+        p1.equip(item2);
 
         p1.listInventory();
 
         p1.removeFromInventory(item1);
-
-        p1.listInventory();
-
+/*
         while (!e1.isDead() && !p1.isDead()) {
 
             p1.attack(e1);
@@ -43,6 +43,6 @@ public class Main {
             System.out.println(e1.getName() + " is dead");
         } else {
             System.out.println(p1.getName() + " is dead");
-        }
+        }*/
     }
 }
