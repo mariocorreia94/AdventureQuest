@@ -1,6 +1,5 @@
 package com.mjcc.game.character;
 
-
 import java.util.Random;
 
 public class Character {
@@ -9,6 +8,7 @@ public class Character {
     private int health;
     private int basicAtack;
     private int basicDefense;
+    private boolean isDead = false;
 
     // Constructor
     public Character(String name, int health, int basicAtack, int basicDefense) {
@@ -21,18 +21,19 @@ public class Character {
     public int attack(Character character){
         int damage;
         Random r = new Random();
-        damage = r.nextInt((getBasicAtack()) + 1) - character.getBasicDefense();
+        damage = r.nextInt((getBasicAtack()) + 1);
 
-        if(damage < 0){
+        if(damage <= 0){
             damage = 0;
             System.out.println("No damage is going to be taken");
         }
 
         character.setHealth(character.getHealth() - (damage));
 
+
+
         return character.getHealth();
     }
-
 
     // Getters and Setters
     public String getName() {

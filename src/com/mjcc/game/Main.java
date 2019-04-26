@@ -3,8 +3,7 @@ package com.mjcc.game;
 import com.mjcc.game.character.enemy.EnemyType;
 import com.mjcc.game.character.player.Player;
 import com.mjcc.game.character.enemy.Enemy;
-import com.mjcc.game.item.Item;
-import com.mjcc.game.item.ItemType;
+import com.mjcc.game.item.*;
 
 import java.io.IOException;
 
@@ -15,19 +14,27 @@ public class Main {
         Player p1 = new Player("Mário");
         Enemy e1 = new Enemy(EnemyType.MERCENARY);
 
-        Item item = new Item(ItemType.BASIC_SHIELD);
-        Item item1 = new Item(ItemType.PILE_OF_LEAVES);
-        Item item2 = new Item(ItemType.BASIC_AXE);
+        Item item = new Wearable("Basic Shield", ItemPurpose.SHIELD, 0, 10);
+        Item item1 = new Generable("Pile of leaves");
+        Item item2 = new Wearable("Basic Axe", ItemPurpose.WEAPON, 10, 0);
 
         p1.addToInventory(item);
         p1.addToInventory(item1);
-        //p1.addToInventory(item2);
+        p1.addToInventory(item2);
 
         p1.equip(item2);
 
         p1.listInventory();
 
-        p1.removeFromInventory(item1);
+        p1.setHealth(20);
+
+        System.out.println(p1.getHealth());
+
+        p1.sleep();
+
+        System.out.println(p1.getHealth());
+
+        //p1.removeFromInventory(item1);
 /*
         while (!e1.isDead() && !p1.isDead()) {
 

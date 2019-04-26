@@ -2,22 +2,29 @@ package com.mjcc.game.item;
 
 public class Item {
 
-    private ItemType type;
+    private String name;
+    private String generalName;
+    private ItemPurpose itemPurpose;
 
-    public Item(ItemType type) {
-
-        this.type = type;
-
+    Item(String name, ItemPurpose itemPurpose) {
+        this.name = name;
+        this.generalName = name;
+        this.itemPurpose = itemPurpose;
     }
 
-
-    public ItemType getType() {
-        return type;
+    //Getters and Setters
+    public String getName() {
+        if(name.equals(generalName)) {
+            return generalName;
+        }
+        return generalName + " (" + name + ")";
     }
 
+    public ItemPurpose getItemPurpose() {
+        return itemPurpose;
+    }
 
-    @Override
-    public String toString() {
-        return type.getDisplayName();
+    public void setName(String name) {
+        this.name = name;
     }
 }
